@@ -31,10 +31,17 @@
 </template>
 
 <script>
+import { axios } from '@/API';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+
+  created() {
+    axios.get( 'test' )
+      .then( res => console.log( res ))
   }
 }
 </script>
